@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Page with Barcode Scanner</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <script src="https://unpkg.com/@zxing/library@latest"></script> <!-- Updated ZXing script -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Select an Option</h1>
+        <label for="options">Choose a category:</label>
+        <select id="options" onchange="handleOptionChange()">
+            <option value="attendance">For Attendance</option>
+            <option value="ta_attendance">For TA Attendance</option>
+            <option value="assignment_marks">For Assignment Marks</option>
+        </select>
+
+        <!-- Barcode Scanner Container -->
+        <div id="barcode-scanner" style="display:none;">
+            <h2>Scan TA's Barcode</h2>
+            <video id="video" playsinline autoplay></video>
+        </div>
+
+        <button class="button" id="submit-btn" style="display:none;">Submit</button>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
